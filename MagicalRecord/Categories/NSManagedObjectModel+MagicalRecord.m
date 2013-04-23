@@ -53,6 +53,9 @@ static NSManagedObjectModel *defaultManagedObjectModel_ = nil;
 {
 	NSString *path = [[NSBundle mainBundle] pathForResource:[modelFileName stringByDeletingPathExtension] 
                                                      ofType:[modelFileName pathExtension]];
+        //TeacherKit
+   	path = [[NSBundle mainBundle] pathForResource:@"SVCDTest" ofType:@"momd"];
+
 	NSURL *momURL = [NSURL fileURLWithPath:path];
 	
 	NSManagedObjectModel *model = [[NSManagedObjectModel alloc] initWithContentsOfURL:momURL];
