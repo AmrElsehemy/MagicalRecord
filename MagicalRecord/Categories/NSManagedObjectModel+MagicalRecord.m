@@ -29,6 +29,11 @@ static NSManagedObjectModel *defaultManagedObjectModel_ = nil;
 
 + (NSManagedObjectModel *) MR_mergedObjectModelFromMainBundle;
 {
+	//TeacherKit
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"SVCDTest" ofType:@"momd"];
+    NSURL *momURL = [NSURL fileURLWithPath:path];
+    return [[NSManagedObjectModel alloc] initWithContentsOfURL:momURL];
+    //Old
     return [self mergedModelFromBundles:nil];
 }
 
